@@ -1,7 +1,5 @@
-module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  verbose: true,
-  moduleFileExtensions: ['ts', 'js'],
-  testMatch: ['**/__tests__/**/*.test.ts'],
-};
+export const preset = 'ts-jest';
+export const testEnvironment = 'node';
+export const verbose = true;
+export const moduleFileExtensions = ['ts', 'js'];
+export const testMatch = ['**/__tests__/**/*.test.ts'];
