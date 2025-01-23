@@ -30,7 +30,10 @@
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "npm run format",
+      "npm run lint --workspace client",
+      "npm run lint --workspace server",
+      "npm run format --workspace client",
+      "npm run format --workspace server",
       "git add ."
     ]
   }
