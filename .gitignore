@@ -1,0 +1,50 @@
+# Общие игнорируемые файлы
+/node_modules/
+*.log
+*.env
+*.env.local
+*.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/dist/
+/build/
+
+# Файлы и директории, специфичные для клиентской части (Next.js)
+client/.next/
+client/out/
+client/.env.local
+client/.env.*.local
+client/node_modules/
+client/package-lock.json
+
+# Типичные файлы для TypeScript
+*.tsbuildinfo
+
+# Прочие файлы для бэкенда (Express и Prisma)
+server/node_modules/
+server/package-lock.json
+/server/dist/
+/server/.env
+/server/.env.local
+/server/.prisma/
+/server/prisma/migrations/
+
+# Docker файлы (если используешь Docker)
+.docker/
+/docker-compose.yml
+
+# IDE файлы (если используешь VSCode)
+.vscode/
+.idea/
+
+# macOS файлы
+.DS_Store
+
+# Windows файлы
+Thumbs.db
+
+# Логи
+logs/
+*.log
+*.log.*
