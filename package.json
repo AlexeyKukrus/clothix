@@ -2,15 +2,39 @@
   "name": "clothix",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "workspaces": [
     "client",
     "server"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run dev --workspace client\" \"npm run dev --workspace server\"",
+    "build": "concurrently \"npm run build --workspace client\" \"npm run build --workspace server\"",
+    "start": "concurrently \"npm run start --workspace client\" \"npm run start --workspace server\"",
+    "lint": "concurrently \"npm run lint --workspace client\" \"npm run lint --workspace server\"",
+    "format": "concurrently \"npm run format --workspace client\" \"npm run format --workspace server\"",
+    "test": "concurrently \"npm run test --workspace client\" \"npm run test --workspace server\"",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint --workspace client",
+      "npm run lint --workspace server",
+      "npm run format --workspace client",
+      "npm run format --workspace server",
+      "git add ."
+    ]
+  }
 }
