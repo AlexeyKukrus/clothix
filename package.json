@@ -29,14 +29,9 @@
     }
   },
  "lint-staged": {
-    "client/**/*.{js,jsx,ts,tsx}": [
-      "npm run lint --workspace client",
-      "npm run format --workspace client",
-      "git add ."
-    ],
-    "server/**/*.{js,jsx,ts,tsx}": [
-      "npm run lint --workspace server",
-      "npm run format --workspace server",
+  "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run format",
       "git add ."
     ]
   }
